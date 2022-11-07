@@ -3163,9 +3163,11 @@
     };
     const da = new DynamicAdapt("max");
     da.init();
-    $(".menu__link").click((function(event) {
-        if ($(".menu__list").hasClass("one")) $(".menu__link").not($(this)).removeClass("active");
-        $(this).toggleClass("active");
+    $(".menu__link").on("click", (function(event) {
+        if ($(".menu__list").hasClass("one")) {
+            $(".menu__link").not($(this)).removeClass("active");
+            $(this).toggleClass("active");
+        }
     }));
     window["FLS"] = true;
     isWebp();
